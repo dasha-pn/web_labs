@@ -10,43 +10,30 @@
       name="description"
       content="LeafyPod - це інтелектуальний вазон, який забезпечує ідеальні умови для росту ваших рослин завдяки системі автополиву та датчиків."
     />
+  <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body>
-    <header class="header">
-      <div class="container header__inner">
-        <div class="logo">
-          <img
-            src="images/logo.svg"
-            alt="LeafyPod Logo"
-            class="logo__image"
-            width="160"
-            height="31"
-          />
-        </div>
+<body id="top">
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#top" aria-label="LeafyPod">
+        <img src="images/logo.svg" alt="LeafyPod Logo" class="logo__image" width="160" height="31" />
+      </a>
 
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#product" class="nav__link">Про товар</a>
-            </li>
-            <li class="nav__item">
-              <a href="#app" class="nav__link">Додаток</a>
-            </li>
-            <li class="nav__item">
-              <a href="#reviews" class="nav__link">Відгуки</a>
-            </li>
-            <li class="nav__item">
-              <a href="#contact" class="nav__link">Зв'язатися</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#product" class="nav__link">Про товар</a></li>
+          <li class="nav__item"><a href="#app" class="nav__link">Додаток</a></li>
+          <li class="nav__item"><a href="#reviews" class="nav__link">Відгуки</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Зв'язатися</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main class="main-content">
-      <section class="product-intro">
-        <div class="product-intro__container">
+  <main class="main-content">
+    <section class="product-intro" id="product">
+      <div class="container product-intro__container">
           <div class="product-intro__content">
             <h1 class="product-intro__title">
               Інтелектуальний<br />
@@ -68,22 +55,20 @@
               на Kickstarter
             </a>
           </div>
+      </div>
 
-          <img
-            src="images/big_flower.svg"
-            alt="Інтелектуальний вазон LeafyPod на підвіконні з рослиною всередині"
-            class="product-intro__image"
-            width="516"
-            height="609"
-          />
-        </div>
+          <div class="product-intro__image-wrap">
+            <img
+              src="images/big_flower.svg"
+              alt="Інтелектуальний вазон LeafyPod на підвіконні з рослиною всередині"
+              class="product-intro__image"
+            />
+          </div>
       </section>
 
       <section class="problems">
         <div class="problems__container">
-          <h2 class="problems__title">
-            Вирішує 4 головні причини загибелі рослин
-          </h2>
+          <h2 class="problems__title">Вирішує 4 головні причини загибелі рослин</h2>
 
           <div class="problem-cards">
             <article class="problem-photo">
@@ -92,7 +77,7 @@
               </div>
               <h3 class="problem-photo__title">Зволоження ґрунту</h3>
               <p class="problem-photo__text">
-                Полив динамічно регулюється, щоб ваші рослини залишалися 
+                Полив динамічно регулюється, щоб ваші рослини залишалися
                 настільки вологими або сухими, наскільки вони повинні бути
               </p>
             </article>
@@ -103,7 +88,7 @@
               </div>
               <h3 class="problem-photo__title">Світло</h3>
               <p class="problem-photo__text">
-                Отримуйте індивідуальні рекомендації щодо освітлення, 
+                Отримуйте індивідуальні рекомендації щодо освітлення,
                 навіть якщо ви не спостерігаєте за своєю рослиною так уважно, як ми
               </p>
             </article>
@@ -115,7 +100,7 @@
               <h3 class="problem-photo__title">Температура</h3>
               <p class="problem-photo__text">
                 Вбудовані датчики відстежують температуру 24/7, тож ви будете
-                попереджені про перші зимові нічні протяги, щоб перенести 
+                попереджені про перші зимові нічні протяги, щоб перенести
                 вашу улюблену рослину в тепліше місце!
               </p>
             </article>
@@ -126,20 +111,19 @@
               </div>
               <h3 class="problem-photo__title">Вологість повітря</h3>
               <p class="problem-photo__text">
-                Чи знаєте ви, що 20% різниця вологості між вашою спальнею 
-                та ванною може суттєво вплинути на процвітання вашого потосу? 
+                Чи знаєте ви, що 20% різниця вологості між вашою спальнею
+                та ванною може суттєво вплинути на процвітання вашого потосу?
                 Отримуйте сповіщення в додатку!
               </p>
             </article>
           </div>
 
-          <div class="problems__decor">
-            <img
-              src="images/two_slide_flower.svg"
-              alt=""
-              class="problems__decor-image"
-            />
-          </div>
+          <img
+            src="images/two_slide_flower.svg"
+            alt=""
+            class="problems__decor-image"
+            aria-hidden="true"
+          />
         </div>
       </section>
 
@@ -176,7 +160,7 @@
       </section>
 
       <section class="features">
-          <div class="container features__inner">
+          <div class="features__inner">
             <h2 class="features__title">Особливості продукту</h2>
 
             <div class="feature-grid" role="list">
@@ -323,42 +307,39 @@
           </div>
         </section>
 
-        <section class="package-items">
-          <h2 id="package-title">Що у комплекті</h2>
+        <section class="package" id="package">
+          <div class="package__container">
+            <h2 class="package__title">Що у комплекті</h2>
 
-          <figure class="package-item">
-            <img src="images/smart_vase.svg" alt="Вазон LeafyPod" />
-            <figcaption>LeafyPod</figcaption>
-          </figure>
+            <div class="package__grid">
+              <figure class="package-item package-item--big">
+                <img src="images/smart_vase.svg" alt="LeafyPod" />
+                <figcaption>LeafyPod</figcaption>
+              </figure>
 
-          <figure class="package-item">
-            <img src="images/adapter.svg" alt="Адаптер живлення" />
-            <figcaption>Адаптер живлення</figcaption>
-          </figure>
+              <figure class="package-item">
+                <img src="images/adapter.svg" alt="Адаптер живлення" />
+                <figcaption>Адаптер живлення</figcaption>
+              </figure>
 
-          <figure class="package-item">
-            <img src="images/cabel.svg" alt="Зарядний кабель" />
-            <figcaption>Зарядний кабель</figcaption>
-          </figure>
+              <figure class="package-item">
+                <img src="images/cabel.svg" alt="Зарядний кабель" />
+                <figcaption>Зарядний кабель</figcaption>
+              </figure>
 
-          <figure class="package-item">
-            <img src="images/filter.svg" alt="Фільтр LeafyPod" />
-            <figcaption>LeafyPod фільтр</figcaption>
-          </figure>
+              <figure class="package-item">
+                <img src="images/filter.svg" alt="LeafyPod фільтр" />
+                <figcaption>LeafyPod<br />фільтр</figcaption>
+              </figure>
 
-          <figure class="package-item">
-            <img src="images/instruction.svg" alt="Інструкція користувача" />
-            <figcaption>Інструкція</figcaption>
-          </figure>
+              <figure class="package-item">
+                <img src="images/instruction.svg" alt="Інструкція" />
+                <figcaption>Інструкція</figcaption>
+              </figure>
+            </div>
 
-              <img
-                class="package__decor"
-                src="images/light_leaf.svg"
-                alt=""
-                aria-hidden="true"
-                width="435"
-                height="573"
-              />
+            <img class="package__decor" src="images/light_leaf.svg" alt="" aria-hidden="true" />
+          </div>
         </section>
 
         <section class="reviews">
@@ -408,7 +389,7 @@
             <header class="review__header">
               <img
                 class="review__avatar"
-                src="images/sofia.svg"
+                src="images/arsen.svg"
                 alt="Фото Софії"
                 width="48"
                 height="48"
@@ -425,7 +406,7 @@
           </article>
         </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" aria-label="Підвал сайту">
     <img
       class="footer__logo"
       src="images/logo.svg"
