@@ -85,10 +85,8 @@ a { color: inherit; }
   align-items: center;
   justify-content: flex-start;
 
-  /* замість vw/vh — нормальний геп у px з clamp */
   gap: clamp(18px, 3.2vw, 48px);
 
-  /* було vh — робимо просто керований px */
   padding-block: clamp(18px, 2.4vw, 26px);
 }
 
@@ -113,8 +111,7 @@ a { color: inherit; }
   text-decoration: none;
   color: var(--nav);
 
-  /* було 1vw — краще rem */
-  font-size: 0.875rem; /* ~14px */
+  font-size: 0.875rem;
   font-weight: 400;
   padding: 6px 10px;
 }
@@ -125,7 +122,6 @@ a { color: inherit; }
   content: "|";
   color: var(--divider);
 
-  /* було 1vw — залишаємо clamp, але по ширині екрана ок для дрібних речей */
   margin: 0 clamp(6px, 1.2vw, 8px);
 }
 
@@ -140,20 +136,17 @@ a { color: inherit; }
 .product-intro {
   position: relative;
 
-  /* 100vh тут ОК: це hero-екран */
   min-height: 100vh;
   overflow: hidden;
 }
 
 .product-intro__container {
-  /* 100vh тут можна лишити, але без vh-відступів */
   min-height: 100vh;
 
   display: flex;
   align-items: center;
   justify-content: flex-start;
 
-  /* було vh — тепер стабільні px */
   padding-top: clamp(88px, 8vw, 120px);
   padding-bottom: clamp(40px, 6vw, 80px);
 }
@@ -161,12 +154,10 @@ a { color: inherit; }
 .product-intro__content {
   width: min(46rem, 60%);
 
-  /* було vw — робимо clamp, але залежність від ширини для падінга норм */
   padding-right: clamp(16px, 3.2vw, 40px);
 }
 
 .product-intro__title {
-  /* було clamp з vh — робимо без vh */
   margin: 0 0 clamp(14px, 1.6rem, 22px);
 
   font-size: clamp(2.3rem, 4vw, 3.5rem);
@@ -176,10 +167,8 @@ a { color: inherit; }
 }
 
 .product-intro__description {
-  /* було vh — робимо без vh */
   margin: 0 0 clamp(18px, 1.75rem, 28px);
 
-  /* було 1.2vw — стабільніше через rem */
   font-size: 1rem;
   line-height: 1.6;
   color: var(--muted);
@@ -189,7 +178,6 @@ a { color: inherit; }
 .product-intro__button {
   display: inline-block;
 
-  /* було vw — робимо просто px/rem */
   padding: 14px 26px;
 
   border-radius: 999px;
@@ -212,11 +200,9 @@ a { color: inherit; }
   top: 0;
   right: 0;
 
-  /* було 50vw — робимо % + max-width: на великих екранах не роздує */
   width: 50%;
   max-width: 42rem;
 
-  /* 100vh тут ОК, бо картинка прив’язана до висоти hero */
   height: 100vh;
 
   z-index: 1;
@@ -367,7 +353,6 @@ a { color: inherit; }
 .problems {
   position: relative;
 
-  /* було vh у padding — робимо стабільно через px/rem */
   padding: clamp(28px, 2.25rem, 40px) 0 clamp(42px, 3.25rem, 60px);
 
   overflow: hidden;
@@ -378,7 +363,6 @@ a { color: inherit; }
   background-color: #8a9772;
   border-radius: var(--radius-lg);
 
-  /* тут vw ок, бо це “великий” блок/лейаут; але можна ще підперти rem */
   padding: clamp(26px, 3.2vw, 44px) clamp(18px, 4vw, 56px);
 
   overflow: visible;
@@ -399,7 +383,6 @@ a { color: inherit; }
   display: flex;
   flex-wrap: wrap;
 
-  /* vw для gap — нормально, це лейаутна відстань */
   gap: clamp(14px, 2vw, 26px);
 }
 
@@ -407,7 +390,6 @@ a { color: inherit; }
   background-color: #ffffff;
   border-radius: var(--radius-md);
 
-  /* було vw — лишаємо clamp, але без vh */
   padding: clamp(16px, 2vw, 22px) clamp(16px, 2.4vw, 26px);
 
   flex: 1 1 calc(50% - clamp(14px, 2vw, 26px));
@@ -425,7 +407,6 @@ a { color: inherit; }
 
   background-color: #3f5a3d;
 
-  /* було vh — робимо нормальний відступ */
   margin-bottom: 12px;
 }
 
@@ -437,7 +418,6 @@ a { color: inherit; }
 .problem-card__title {
   margin: 0 0 10px;
 
-  /* було vw — краще rem, щоб не “скакало” */
   font-size: clamp(1.1rem, 1.35rem, 1.5rem);
 
   font-weight: 600;
@@ -448,7 +428,6 @@ a { color: inherit; }
 .problem-card__text {
   margin: 0;
 
-  /* було 1.1vw — робимо стабільно */
   font-size: 1rem;
 
   line-height: 1.55;
@@ -459,10 +438,8 @@ a { color: inherit; }
   position: absolute;
   right: -2%;
 
-  /* було -45% від висоти контейнера (може “поїхати”) — робимо px */
   bottom: -210px;
 
-  /* декор — vw ок */
   width: clamp(140px, 18vw, 210px);
 
   transform: rotate(-5deg);
@@ -470,7 +447,6 @@ a { color: inherit; }
   z-index: 3;
 }
 
-/* ===== Mobile ===== */
 @media (max-width: 520px) {
   .problems__container {
     padding-inline: 16px;
@@ -506,7 +482,6 @@ a { color: inherit; }
   }
 }
 
-/* ===== Duplicate “photo” card (залишаю як у тебе, але без vh) ===== */
 .problem-photo {
   background-color: #ffffff;
   border-radius: var(--radius-md);
@@ -528,7 +503,6 @@ a { color: inherit; }
 
   background-color: #3f5a3d;
 
-  /* було vh — стало px */
   margin-bottom: 12px;
 }
 
@@ -560,7 +534,6 @@ a { color: inherit; }
 .care {
   position: relative;
 
-  /* було vh — робимо стабільні відступи */
   padding: clamp(34px, 3.5rem, 64px) 0 clamp(42px, 4.5rem, 80px);
 
   background: var(--bg);
@@ -577,7 +550,6 @@ a { color: inherit; }
     "subtitle  video"
     "steps     video";
 
-  /* vw для layout-gap не треба — даємо px/rem */
   column-gap: clamp(22px, 2.75rem, 56px);
   row-gap: clamp(18px, 1.5rem, 28px);
 
@@ -592,7 +564,6 @@ a { color: inherit; }
 .care__title {
   margin: 0;
 
-  /* було vw — робимо ремами, без залежності від ширини екрану */
   font-size: clamp(2.1rem, 2.6rem, 3.25rem);
 
   font-weight: 600;
@@ -602,10 +573,8 @@ a { color: inherit; }
 }
 
 .care__subtitle {
-  /* було vh — робимо звичайні відступи */
   margin: 16px 0 16px;
 
-  /* було vw — рем */
   font-size: clamp(1.3rem, 1.6rem, 2rem);
 
   font-weight: 600;
@@ -619,7 +588,6 @@ a { color: inherit; }
 
   display: grid;
 
-  /* було vh — робимо стабільно */
   gap: 14px;
 
   max-width: 560px;
@@ -633,13 +601,10 @@ a { color: inherit; }
   position: relative;
   background: #ffffff;
 
-  /* border-radius “повністю круглий” — можна 100% */
   border-radius: 22px;
 
-  /* було vw + складний clamp — робимо контрольовано px */
   padding: 16px 22px 16px 72px;
 
-  /* було vw — рем */
   font-size: 1.05rem;
 
   line-height: 1.3;
@@ -659,7 +624,6 @@ a { color: inherit; }
   width: 40px;
   height: 40px;
 
-  /* круг */
   border-radius: 50%;
 
   display: grid;
@@ -670,7 +634,6 @@ a { color: inherit; }
 
   font-weight: 600;
 
-  /* було vw — рем */
   font-size: 1.1rem;
 }
 
@@ -678,7 +641,6 @@ a { color: inherit; }
   width: 100%;
   height: auto;
 
-  /* було vw — px */
   border-radius: 24px;
 
   overflow: hidden;
@@ -743,7 +705,6 @@ a { color: inherit; }
 .features {
   position: relative;
 
-  /* було vh — стабільні відступи */
   padding: clamp(28px, 2.25rem, 40px) 0 clamp(42px, 3.25rem, 60px);
 
   overflow: hidden;
@@ -754,7 +715,6 @@ a { color: inherit; }
   background-color: #e9e3dc;
   border-radius: var(--radius-lg);
 
-  /* було vw — робимо без прив’язки до екрану */
   padding: clamp(26px, 2.25rem, 44px) clamp(18px, 2.75rem, 56px);
 
   overflow: visible;
@@ -764,7 +724,6 @@ a { color: inherit; }
   margin: 0 0 clamp(18px, 1.5rem, 30px);
   text-align: center;
 
-  /* було vw — рем */
   font-size: clamp(2rem, 2.6rem, 3.1rem);
 
   font-weight: 600;
@@ -777,7 +736,6 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  /* було vw — px/rem */
   gap: clamp(16px, 1.5rem, 26px);
 }
 
@@ -785,10 +743,8 @@ a { color: inherit; }
   background: #ffffff;
   border-radius: var(--radius-md);
 
-  /* було vw — px/rem */
   padding: clamp(18px, 1.5rem, 28px);
 
-  /* було vw — краще без залежності від ширини екрану */
   min-height: clamp(150px, 10rem, 190px);
 }
 
@@ -798,14 +754,12 @@ a { color: inherit; }
   justify-content: space-between;
   gap: 14px;
 
-  /* було vh — px */
   margin-bottom: 12px;
 }
 
 .feature-card__title {
   margin: 0;
 
-  /* було vw — рем */
   font-size: clamp(1.15rem, 1.35rem, 1.55rem);
 
   font-weight: 600;
@@ -816,7 +770,6 @@ a { color: inherit; }
 .feature-card__icon {
   flex-shrink: 0;
 
-  /* було vw — px */
   width: 44px;
   height: 44px;
 
@@ -826,7 +779,6 @@ a { color: inherit; }
 .feature-card__text {
   margin: 0;
 
-  /* було vw — стабільно */
   font-size: 1rem;
 
   line-height: 1.55;
@@ -835,11 +787,10 @@ a { color: inherit; }
 }
 
 .features__inner {
-  position: relative; /* важливо, щоб absolute працював від цього блока */
-  overflow: hidden;   /* щоб декор не вилазив як попало */
+  position: relative;
+  overflow: hidden;
 }
 
-/* за замовчуванням ховаємо */
 .features__decor {
   display: none;
 }
@@ -850,15 +801,15 @@ a { color: inherit; }
   }
 
   .feature-card {
-    min-height: auto; /* щоб не роздувало картки */
+    min-height: auto;
   }
 
   .features__decor {
     display: block;
     position: absolute;
 
-    left: -38px;      /* підганяй як треба */
-    bottom: 24px;     /* або top: 55% якщо хочеш по центру */
+    left: -38px;
+    bottom: 24px;
 
     width: 140px;
     height: auto;
@@ -879,7 +830,6 @@ a { color: inherit; }
    ========================================================== */
 
 .app-features {
-  /* було vh — робимо стабільно */
   padding: clamp(44px, 3.25rem, 86px) 0;
   background: var(--bg);
 }
@@ -887,10 +837,8 @@ a { color: inherit; }
 .app-features__title {
   width: min(90%, var(--container-max));
 
-  /* було vh — робимо px/rem */
   margin: 0 auto clamp(22px, 1.75rem, 40px);
 
-  /* було vw — робимо ремами */
   font-size: clamp(2.1rem, 2.6rem, 3.25rem);
 
   font-weight: 600;
@@ -906,7 +854,6 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: 1fr minmax(320px, 48%);
 
-  /* було vw — робимо px/rem */
   gap: clamp(22px, 2.75rem, 64px);
 
   align-items: center;
@@ -920,7 +867,6 @@ a { color: inherit; }
   counter-reset: appstep;
   display: grid;
 
-  /* було vh — робимо стабільно */
   gap: 20px;
 
   max-width: 620px;
@@ -930,7 +876,6 @@ a { color: inherit; }
   counter-increment: appstep;
   position: relative;
 
-  /* було vw — робимо стабільно */
   padding-left: 78px;
 }
 
@@ -941,7 +886,6 @@ a { color: inherit; }
   left: 0;
   top: 0.15em;
 
-  /* було vw — px */
   width: 44px;
   height: 44px;
 
@@ -954,14 +898,12 @@ a { color: inherit; }
   color: #fff;
   font-weight: 600;
 
-  /* було vw — rem */
   font-size: 1.1rem;
 }
 
 .app-feature__title {
   margin: 0 0 6px;
 
-  /* було vw — rem */
   font-size: clamp(1.2rem, 1.35rem, 1.55rem);
 
   font-weight: 600;
@@ -972,7 +914,6 @@ a { color: inherit; }
 .app-feature p {
   margin: 0;
 
-  /* було vw — стабільно */
   font-size: 1rem;
 
   line-height: 1.55;
@@ -984,7 +925,6 @@ a { color: inherit; }
   width: 100%;
   height: auto;
 
-  /* було vw — px */
   border-radius: 26px;
 
   overflow: hidden;
@@ -995,7 +935,6 @@ a { color: inherit; }
   border-bottom: 4px solid #8a9772;
 }
 
-/* ===== APP FEATURES: mobile layout like in screenshot ===== */
 @media (max-width:768px){
 
   .app-features{
@@ -1041,7 +980,7 @@ a { color: inherit; }
 
     margin: 0 auto;
 
-    text-align: left; /* текст читається краще */
+    text-align: left;
   }
 
   .app-feature{
@@ -1084,7 +1023,6 @@ a { color: inherit; }
 .package {
   position: relative;
 
-  /* було vh — робимо стабільно */
   padding: clamp(70px, 5rem, 110px) 0;
 
   background: #8a9772;
@@ -1099,12 +1037,10 @@ a { color: inherit; }
 }
 
 .package__title {
-  /* було vh — стабільно */
   margin: 0 0 clamp(26px, 2rem, 44px);
 
   color: #ffffff;
 
-  /* було vw — рем */
   font-size: clamp(2.4rem, 3rem, 3.6rem);
 
   font-weight: 700;
@@ -1119,7 +1055,6 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: 1.85fr 1fr 1fr;
 
-  /* було vw — робимо без прив'язки до ширини екрана */
   grid-template-rows: 220px 220px;
 
   column-gap: 18px;
@@ -1135,7 +1070,6 @@ a { color: inherit; }
   background: #ffffff;
   border-radius: 28px;
 
-  /* було vw — px/rem */
   padding: 22px;
 
   display: flex;
@@ -1160,7 +1094,6 @@ a { color: inherit; }
   color: var(--green);
   font-weight: 600;
 
-  /* було vw — рем */
   font-size: 1.35rem;
 
   line-height: 1.15;
@@ -1170,7 +1103,6 @@ a { color: inherit; }
   grid-column: 1 / 2;
   grid-row: 1 / 3;
 
-  /* було vw — px */
   padding: 32px;
 }
 
@@ -1178,15 +1110,12 @@ a { color: inherit; }
   max-height: 78%;
 }
 
-/* ✅ збільшена “квіточка” */
 .package__decor {
   position: absolute;
 
-  /* трохи підсунув, щоб красивіше видно */
   left: -260px;
   bottom: -240px;
 
-  /* було clamp з vw — робимо більший px */
   width: 590px;
 
   z-index: 1;
@@ -1194,7 +1123,6 @@ a { color: inherit; }
   opacity: 0.95;
 }
 
-/* ===== PACKAGE mobile layout (like screenshot) ===== */
 @media (max-width: 560px) {
   .package {
     padding: 28px 0 34px;
@@ -1220,7 +1148,6 @@ a { color: inherit; }
     align-items: stretch;
   }
 
-  /* велика картка зверху на всю ширину */
   .package-item--big {
     grid-column: 1 / -1;
     grid-row: auto;
@@ -1229,12 +1156,11 @@ a { color: inherit; }
   }
 
   .package-item--big img {
-    max-height: 160px;   /* щоб не був гігантський */
+    max-height: 160px;
     width: 100%;
     object-fit: contain;
   }
 
-  /* малі картки */
   .package-item {
     padding: 14px;
     border-radius: 22px;
@@ -1251,7 +1177,6 @@ a { color: inherit; }
     text-align: left;
   }
 
-  /* квіточку можна лишити, але щоб не лізла на контент */
   .package__decor {
     width: 360px;
     left: -160px;
@@ -1457,11 +1382,10 @@ a { color: inherit; }
 }
 
 /* =========================
-   REVIEWS + FOOTER (MOBILE)
+   REVIEWS + FOOTER
    ========================= */
 @media (max-width: 560px) {
 
-  /* ---- REVIEWS ---- */
   .reviews{
     width: min(92%, var(--container-max));
     padding: 32px 0 28px;
@@ -1503,7 +1427,6 @@ a { color: inherit; }
   }
 }
 
-/* ===== FOOTER mobile: EXACT like reference (2nd photo) ===== */
 @media (max-width: 560px) {
   .footer{
     position: relative;
@@ -1520,11 +1443,9 @@ a { color: inherit; }
     border-top-left-radius: 28px;
     border-top-right-radius: 28px;
 
-    /* ✅ місце під листок справа */
     padding-right: 140px;
   }
 
-  /* ✅ НАЙВАЖЛИВІШЕ: скидаємо десктопні grid-column/grid-row */
   .footer__logo,
   .footer__tagline,
   .footer__social,
@@ -1537,7 +1458,7 @@ a { color: inherit; }
     align-self: start;
     position: relative;
     z-index: 1;
-    max-width: none; /* не обмежуємо, щоб як на макеті */
+    max-width: none;
   }
 
   .footer__logo{ width: 150px; }
@@ -1561,7 +1482,6 @@ a { color: inherit; }
     font-size: 12px;
   }
 
-  /* ✅ листок справа як фон */
   .footer__decor{
     display: block !important;
     position: absolute;
